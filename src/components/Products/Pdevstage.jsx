@@ -77,7 +77,7 @@ const DevelopmentStages = () => {
               return (
                 <div
                   key={index}
-                  className={`group relative p-8 bg-white lg:hover:z-10 lg:hover:scale-150 rounded-2xl border border-gray-800 hover:border-gray-600 transition-all duration-300 hover:transform hover:-translate-y-2 ${
+                  className={`group relative p-8 bg-white lg:hover:z-10 lg:hover:scale-135 lg:hover:shadow-2xl rounded-2xl border border-gray-800 hover:border-gray-600 transition-all duration-300 hover:transform hover:-translate-y-2 ${
                     index === 0 || index === 3 ? "lg:col-span-1" : ""
                   } ${index === 1 || index === 4 ? "md:col-span-1" : ""}`}
                 >

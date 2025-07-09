@@ -30,6 +30,7 @@ body {
 }
 
 
+
  
     
     .loop {
@@ -49,8 +50,49 @@ body {
     @keyframes scroll {
       0% {
         transform: translateX(0);
+     
       }
       100% {
         transform: translateX(-50%);
+       
       }
     }
+ 
+
+    .side-animation-content{
+        animation : side-animate-content 1s linear;
+         
+         
+        
+    }
+
+
+     @keyframes side-animate-content{
+          0%{
+            transform : translateX(-50%);
+            opacity: 0;
+          }
+          100%{
+            transform : translateX(0%);
+            opacity:1;
+          }
+         }
+
+    .side-animation{
+        animation : side-animate 1s linear;
+         
+         
+        
+    }
+
+
+     @keyframes side-animate{
+          0%{
+            transform : translateX(50%);
+            opacity: 0;
+          }
+          100%{
+            transform : translateX(0%);
+            opacity:1;
+          }
+         }

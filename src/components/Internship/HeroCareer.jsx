@@ -5,7 +5,7 @@ import bgline from "../../assets/bg-line.png";
 function HeroCareer() {
   return (
     <div className="flex md:flex-row flex-col space-y-10 items-end xl:max-w-7xl w-full xl:mx-auto ">
-      <div className="content pl-3 space-y-10 flex flex-col w-full md:w-1/2">
+      <div className="content side-animation-content pl-3 space-y-10 flex flex-col w-full md:w-1/2">
         <div className="xl:space-y-10 space-y-5">
           <h1 className="xl:text-7xl lg:text-6xl text-5xl font-semibold text-slate-700">
             Join Our Journey <br /> at Ilakkanam
@@ -30,7 +30,7 @@ function HeroCareer() {
           </button>
         </div>
       </div>
-      <div className="image  flex xl:justify-end justify-center relative w-full md:w-1/2">
+      <div className="image side-animation  flex xl:justify-end justify-center relative w-full md:w-1/2">
         <div className="absolute -z-10 h-[70%] w-[70%] xl:left-45 left-20 top-0">
           <img src={bgline} alt="" />
         </div>

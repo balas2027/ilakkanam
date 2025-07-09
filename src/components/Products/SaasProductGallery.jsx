@@ -1,4 +1,5 @@
 import React, {useState,useRef} from "react";
+import Underline from '../../assets/underline.png'
 
 function SaasProductGallery({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -41,14 +42,19 @@ function SaasProductGallery({ projects }) {
   const currentProject = projects[activeIndex];
 
   return (
-    <div className="min-h-screen  bg-gradient-to-br from-white/8 via-black to-white/5 bg-black">
-    <div className="text-transparent  bg-clip-text bg-gradient-to-l from-white to-white/60 text-4xl sm:text-5xl text-center font-bold">Explore Our Solutions</div>
+    <div className="min-h-screen group  bg-gradient-to-br from-white/8 via-black to-white/5 bg-black">
+    <div className="text-transparent relative max-w-fit mx-auto  bg-clip-text bg-gradient-to-l from-white to-white/60 text-4xl sm:text-5xl text-center w-full font-bold">Explore Our Solutions
+  <div className="absolute sm:left-auto left-10 sm:right-3 transform lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-[2000ms] mt-1">
+    <img src={Underline} alt="" />
+  </div>
+
+    </div>
       {/* Main Product Showcase */}
-      <div ref={showcaseRef} className="max-w-7xl  mx-auto px-6 py-22">
+      <div ref={showcaseRef} className="max-w-7xl  mx-auto px-6 py-10 sm:py-22">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Image */}
           <div className="relative">
-            <div className="relative aspect-[4/3] bg-gray-50 rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/3] bg-gray-50 rounded-lg overflow-hidden shadow-2xl">
               <img
                 src={currentProject.url}
                 alt={currentProject.title}
@@ -109,7 +115,7 @@ function SaasProductGallery({ projects }) {
                 {currentProject.keyFeatures.slice(0, 4).map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-black rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-400 font-medium">{feature}</span>
+                    <span className="text-gray-400 font-medium"><li style={{listStyle:"square"}}>{feature}</li></span>
                   </div>
                 ))}
               </div>
@@ -219,7 +225,7 @@ function SaasProductGallery({ projects }) {
                   <img
                     src={modalProject.url}
                     alt={modalProject.title}
-                    className="w-full   aspect-[4/3] object-cover rounded-xl mb-6"
+                    className="w-full   aspect-[4/3] object-cover rounded-2xl mb-6"
                   />
                 </div>
 

@@ -53,7 +53,7 @@ function InternshipForm() {
                 <input
                   type="text"
                   name="name"
-                  {...register("name", { required: "The name is required" })}
+                  {...register("name", { required: "Name is required" })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your full name"
                 />
@@ -68,9 +68,13 @@ function InternshipForm() {
                 <input
                   type="tel"
                   name="phone"
+                  {...register("phone", {
+                    required: "Phone Number is required.",
+                  })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="+91 XXXXX XXXXX"
                 />
+                <p style={{ color: "red" }}>{errors.phone?.message}</p>
               </div>
 
               <div>
@@ -80,9 +84,17 @@ function InternshipForm() {
                 <input
                   type="email"
                   name="email"
+                  {...register("email", {
+                    required: "Email Id is required.",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Invalid email address",
+                    },
+                  })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="your.email@example.com"
                 />
+                <p style={{ color: "red" }}>{errors.email?.message}</p>
               </div>
 
               <div>
@@ -144,9 +156,11 @@ function InternshipForm() {
                 <input
                   type="text"
                   name="university"
+                  {...register("university" , {required : "required"})}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Your university name"
                 />
+                <p style={{color :"red"}}>{errors.university?.message}</p>
               </div>
 
               <div>
@@ -156,9 +170,11 @@ function InternshipForm() {
                 <input
                   type="text"
                   name="course"
+                    {...register("course" , {required : "required"})}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="e.g., Computer Science, Design"
                 />
+                 <p style={{color :"red"}}>{errors.course?.message}</p>
               </div>
 
               <div>
@@ -167,6 +183,7 @@ function InternshipForm() {
                 </label>
                 <select
                   name="year"
+                    {...register("year" , {required : "required"})}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select year</option>
@@ -177,6 +194,7 @@ function InternshipForm() {
                   <option value="Final Year">Final Year</option>
                   <option value="Graduate">Graduate</option>
                 </select>
+                <p style={{color : "red"}}>{errors.year?.message}</p>
               </div>
             </div>
           </div>
@@ -205,6 +223,7 @@ function InternshipForm() {
                 </label>
                 <select
                   name="role"
+                      {...register("role", {required:"Please mention thr role"})}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select a role</option>
@@ -219,14 +238,16 @@ function InternshipForm() {
                   <option value="Project Management">Project Management</option>
                   <option value="Quality Assurance">Quality Assurance</option>
                 </select>
+                <p style={{color:"red"}}>{errors.role?.message}</p>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Internship Duration *
+                  Internship Duration 
                 </label>
                 <select
                   name="duration"
+              
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select duration</option>
@@ -240,7 +261,7 @@ function InternshipForm() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Preferred Start Date *
+                  Preferred Start Date
                 </label>
                 <input
                   type="date"
@@ -251,7 +272,7 @@ function InternshipForm() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Availability *
+                  Availability
                 </label>
                 <select
                   name="availability"
@@ -302,14 +323,16 @@ function InternshipForm() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Technical Skills
+                  Technical Skills *
                 </label>
                 <textarea
                   name="skills"
                   rows="3"
+                  {...register("skills" , {required : "required"})}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="List your technical skills, programming languages, tools, etc."
                 />
+                <p style={{color:"red"}}>{errors.skills?.message}</p>
               </div>
             </div>
           </div>
@@ -333,7 +356,7 @@ function InternshipForm() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Resume/CV *
+                Resume/CV
               </label>
               <div className="mt-1 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-400 transition-colors">
                 <div className="text-center">
@@ -354,6 +377,7 @@ function InternshipForm() {
                     type="file"
                     name="resume"
                     accept=".pdf,.doc,.docx"
+                  
                     className="mx-auto mt-4 block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
                   />
                   <p className="mt-2 text-sm text-gray-500">

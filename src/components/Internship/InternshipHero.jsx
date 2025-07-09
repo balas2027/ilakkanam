@@ -2,7 +2,7 @@ import React from "react";
 import carrer from "../../assets/bg.png";
 import bgline from "../../assets/bg-line.png";
 import carrer1 from "../../assets/bg-small.png";
-
+import underlinein from '../../assets/underlineintern.png';
 function HeroCareer() {
   return (
     <>
@@ -34,6 +34,9 @@ function HeroCareer() {
           <img src={carrer} alt="" className="md:block hidden" />
 
           <img src={carrer1} alt="" className="md:hidden block" />
+        </div>
+        <div className="bgline -z-20 sm:block absolute hidden lg:bottom-3 sm:-skew- sm:bottom-0 xl:bottom-10">
+          <img src={underlinein} alt="" />
         </div>
       </div>
     </>
