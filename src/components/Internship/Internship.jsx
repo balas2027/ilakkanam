@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-
+import HeroCareer from "./HeroCareer";
+import Highlight from './Highlight';
+import Cform from './Cform'
+import InternshipHero from './InternshipHero'
+import IntershipHighlights from './InternshipHighlights';
 
 const AccordionItem = ({ header, text }) => {
   const [active, setActive] = useState(false);
@@ -11,6 +15,7 @@ const AccordionItem = ({ header, text }) => {
   return (
     
     <div className="mb-8  bg-white group hover:bg-gray-100 border border-gray-200 w-full  shadow-lg  p-4  lg:px-6 xl:px-8">
+     
       <button
         className={`faq-btn flex w-full   cursor-pointer p-3 text-left`}
         onClick={handleToggle}
@@ -53,29 +58,26 @@ const AccordionItem = ({ header, text }) => {
 const Accordion = () => {
   return (
     <>
- 
- <div className="container mx-auto">
-     <h1 className="mb-4 mt-20 text-center text-4xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-600 via-slate-900 to-slate-950 sm:text-5xl">
-  Internship Program Highlights
-</h1>
-<p className="text-lg text-center max-w-2xl mx-auto mb-8">
-  Discover our hands-on internship experiences designed to empower students with real-world skills and industry exposure.
-</p>
-<div>
-  <h1 className="text-4xl font-bold">Intership Feedback</h1>
-  
-  </div>
-<div>
-  <h1>Certificate Distribution</h1>
- 
-  </div>
-
- 
-</div>
+    
+   <div className="career sm:mt-25 mt-20">
+     <HeroCareer />
+   </div>
+   <div>
+    <Highlight />
+   </div>
+   <div>
+    <Cform />
+   </div>
+   <div className="py-5 md:py-10">
+    <InternshipHero />
+   </div>
+   <div>
+    <IntershipHighlights />
+   </div>
 
 
     <section className="relative z-20 overflow-hidden mx-2 bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[30px]">
-      <div className="container mx-auto">
+      <div className="xl:max-w-7xl xl:mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[700px] text-center lg:mb-20">
@@ -94,7 +96,7 @@ const Accordion = () => {
           </div>
         </div>
 
-        <div className="flex w-[95%] mx-auto flex-wrap">
+        <div className="flex  w-[95%] mx-auto flex-wrap">
           <div className="w-full px-4 lg:w-1/2">
             <AccordionItem
               header="What is Hackathon Guidance?"
@@ -123,7 +125,7 @@ const Accordion = () => {
               text="We support incubation centers by providing technical mentorship, prototype development, and startup readiness services."
             />
             <AccordionItem
-              header="Do you work with Govt Start-Up Projects?"
+              header="Do you work with Start-Up Projects?"
               text="Yes, we actively support government-backed startup initiatives through grant applications, technical guidance, and product development."
             />
             <AccordionItem

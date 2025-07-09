@@ -100,14 +100,14 @@ function ServicesCarousel() {
           </div>
 
           {/* Content Display */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 hidden md:block lg:order-2">
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-2xl overflow-hidden">
               {/* Image Section */}
-              <div className="h-64 sm:h-80 lg:h-96 overflow-hidden">
+              <div className="h-64  sm:h-80 lg:h-120 overflow-hidden">
                 <img
                   src={currentService.image}
                   alt={currentService.title}
-                  className="w-full h-full object-cover transition-all duration-700 ease-in-out filter grayscale hover:grayscale-0"
+                  className="w-full h-full object-cover transition-all duration-700 ease-in-out "
                 />
               </div>
             </div>

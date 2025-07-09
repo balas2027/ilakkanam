@@ -25,12 +25,17 @@ const EmblaCarousel = (props) => {
 
 return (
  <section className="w-full">
-    <div className="mx-30">
+    <div className=" mx-3 sm:mx-5 lg:mx-25">
+         <div className="w-full flex justify-end pr-5 mb-3 gap-4">
+            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        </div>
         <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex touch-pan-y touch-pinch-zoom -ml-4">
+             
+            <div className="flex touch-pan-y touch-pinch-zoom">
                 {slidesData.map((slide) => (
-                    <div className="transform-gpu flex-[0_0_45%] min-w-0 pl-4" key={slide.id}>
-                        <div className="bg-black text-white shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] rounded-[1.8rem] text-6xl font-semibold flex items-center justify-center h-130 select-none">
+                    <div className="transform-gpu md:flex-[0_0_80%] flex-[0_0_100%] xl:flex-[0_0_50%] min-w-0 pr-4" key={slide.id}>
+                        <div className="bg-black text-white shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] rounded-[1.8rem] text-6xl font-semibold flex items-center justify-center h-70 sm:h-100 lg:h-120 select-none">
                             {slide.title}
                         </div>
                     </div>
@@ -38,10 +43,7 @@ return (
             </div>
         </div>
 
-        <div className="w-full flex justify-end mt-3 gap-4">
-            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div>
+      
     </div>
 </section>
 )

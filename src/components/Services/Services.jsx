@@ -38,7 +38,7 @@ const Ilakkanam = () => {
               active === 0 ? "1px solid rgba(221, 66, 120, 1)" : "none",
           }}
           className={`transition-all cursor-pointer p-3 justify-self-center max-w-fit duration-200 ${
-            active === 0 ? " animate-bounce" : ""
+            active === 0 ? "" : ""
           } flex items-center gap-2`}
           onClick={() => click(0)}
         >
@@ -57,7 +57,7 @@ const Ilakkanam = () => {
               active === 1 ? "1px solid rgba(221, 66, 120, 1)" : "none",
           }}
           className={`transition-all cursor-pointer p-3 justify-self-center max-w-fit duration-200 ${
-            active === 1 ? "animate-bounce" : ""
+            active === 1 ? "" : ""
           } flex items-center gap-2`}
           onClick={() => click(1)}
         >
@@ -76,7 +76,7 @@ const Ilakkanam = () => {
               active === 2 ? "1px solid rgba(221, 66, 120, 1)" : "none",
           }}
           className={`transition-all cursor-pointer p-3 justify-self-center max-w-fit duration-200 ${
-            active === 2 ? "animate-bounce" : ""
+            active === 2 ? "" : ""
           } flex items-center gap-2`}
           onClick={() => click(2)}
         >
@@ -95,7 +95,7 @@ const Ilakkanam = () => {
               active === 3 ? "1px solid rgba(221, 66, 120, 1)" : "none",
           }}
           className={`transition-all cursor-pointer p-3 justify-self-center max-w-fit duration-200 ${
-            active === 3 ? "animate-bounce" : ""
+            active === 3 ? "" : ""
           } flex items-center gap-2`}
           onClick={() => click(3)}
         >
