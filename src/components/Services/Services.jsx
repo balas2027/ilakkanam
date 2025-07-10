@@ -7,9 +7,11 @@ import StartUp from "./StartUp";
 import WebDevelopment from "./WebDevelopment";
 import {ArrowRight } from "lucide-react";
 
+
+
 const Ilakkanam = () => {
   const [active, setactive] = useState(0);
-
+ 
   function click(num) {
     const value = num;
 
@@ -17,6 +19,9 @@ const Ilakkanam = () => {
   }
 
   console.log(active);
+ 
+  
+   
 
   return (
     <div className="min-h-screen bg-black">

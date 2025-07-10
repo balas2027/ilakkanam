@@ -3,11 +3,17 @@ import carrer from "../../assets/bg.png";
 import bgline from "../../assets/bg-line.png";
 import carrer1 from "../../assets/bg-small.png";
 import underlinein from '../../assets/underlineintern.png';
+import useScrollAnimation from "../../scrollanimation";
+import styles from '../../css/Internship.Module.css';
 function HeroCareer() {
+ 
+ const [ref1, isVisible1] = useScrollAnimation();
+const [ref2, isVisible2] = useScrollAnimation();
+
   return (
     <>
       <div className="flex relative h-full md:flex-row flex-col space-y-10 items-center xl:max-w-7xl w-full xl:mx-auto ">
-        <div className="content pl-3 space-y-10 flex flex-col w-full  md:w-1/2">
+        <div ref={ref1} className={`content   ${isVisible1 ? styles['side-animation-content-show'] : styles['side-animation-content']} pl-3 space-y-10 flex flex-col w-full  md:w-1/2`}>
           <div className="xl:space-y-10 space-y-5">
             <h1 className="xl:text-7xl lg:text-6xl text-5xl font-semibold text-slate-700">
               Shape Your Future with Our Internships
@@ -27,7 +33,7 @@ function HeroCareer() {
             </a>
           </div>
         </div>
-        <div className="image  flex  relative w-[95%] md:w-1/2">
+        <div ref={ref2} className={`image ${isVisible2 ? styles['internship-side-animation-show'] : styles['internship-side-animation']} flex  relative w-[95%] md:w-1/2`}>
           <div className="absolute -z-10  lg:h-[70%] lg:w-[70%] xl:left-45 left-20 top-0">
             <img src={bgline} alt="" />
           </div>

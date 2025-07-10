@@ -1,0 +1,151 @@
+.side-animation-content {
+  opacity: 0;
+}
+
+.side-animation-content-show {
+  animation: side-animate-content 1.3s ease-out forwards;
+}
+
+@keyframes side-animate-content {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+.side-animation{
+  opacity: 0;
+}
+
+.side-animation-show {
+  animation: side-animate 1s ease-out forwards;
+}
+
+@keyframes side-animate {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/*infinite scroll animation */
+    .loop {
+      width: max-content;
+    }
+    .animate-scroll:hover{
+      animation-play-state: paused;
+
+    }
+    .animate-scroll {
+      animation: scroll 20s linear;
+      
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+     
+      }
+      100% {
+        transform: translateX(-50%);
+       
+      }
+    }
+ 
+    
+    .loop {
+      width: max-content;
+    }
+    .animate-scroll1:hover{
+      animation-play-state: paused;
+
+    }
+    .animate-scroll1 {
+      animation: scroll1 20s linear;
+      
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+    }
+    @keyframes scroll1 {
+      0% {
+        transform: translateX(-50%);
+     
+      }
+      100% {
+        transform: translateX(0%);
+       
+      }
+    }
+ 
+
+
+   .group:hover .arrow-icon{
+      animation: icon-side 0.8s ease-in-out infinite alternate;
+    
+    }
+@keyframes icon-side {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+/* internship image animation */
+
+
+.side-animation{
+  opacity: 0;
+}
+
+.internship-side-animation-show {
+  animation: internship-side-animate 1.5s ease-out forwards;
+}
+
+@keyframes internship-side-animate {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+
+
+/* carrer form animation */
+
+.career-form-animation {
+  opacity: 0;
+}
+
+.career-form-animation-show {
+  animation: career-form-animate 1.5s ease-out forwards;
+ 
+}
+ 
+@keyframes career-form-animate {
+  0% {
+    transform: scale(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}

@@ -10,6 +10,8 @@ import {
   Quote,
   Building2,
 } from "lucide-react";
+import useScrollAnimation from "../../scrollanimation";
+import styles from "../../css/Internship.Module.css";
 
 const JobApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -111,6 +113,10 @@ const JobApplicationForm = () => {
     );
   };
 
+  const [ref, isVisible] = useScrollAnimation();
+
+  const [ref1, isVisible1] = useScrollAnimation();
+  
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -132,7 +138,7 @@ const JobApplicationForm = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side - Application Form */}
           <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
+            <div ref={ref} className={` ${isVisible ? styles['career-form-animation-show'] : styles['career-form-animation']} bg-white rounded-lg shadow-lg border border-gray-200 p-8`}>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Submit Your Application
@@ -277,7 +283,7 @@ const JobApplicationForm = () => {
           {/* Right Side - Company Information */}
           <div className="order-1 lg:order-2 space-y-8">
             {/* Why Work at Ilakkanam */}
-            <div className="bg-gray-50 rounded-lg p-8 border border-gray-200">
+            <div ref={ref1} className={`${isVisible1 ? styles['side-animation-show'] : styles['side-animation']}  bg-gray-50 rounded-lg p-8 border border-gray-200`}>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Why Work at Ilakkanam?
               </h3>

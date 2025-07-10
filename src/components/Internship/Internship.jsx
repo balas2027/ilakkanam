@@ -5,6 +5,7 @@ import Cform from './Cform'
 import InternshipHero from './InternshipHero'
 import IntershipHighlights from './InternshipHighlights';
 
+
 const AccordionItem = ({ header, text }) => {
   const [active, setActive] = useState(false);
 

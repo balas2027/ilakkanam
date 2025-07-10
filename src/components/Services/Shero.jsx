@@ -7,19 +7,23 @@ import {
   ArrowRight,
 
 } from "lucide-react";
+import useScrollAnimation from '../../scrollanimation';
+import styles from '../../css/services.module.css';
+
 
 function Shero() {
+
+  const [ref1, isVisible1] = useScrollAnimation();
+  const [ref2, isVisible2] = useScrollAnimation();
+  const [ref3, isVisible3] = useScrollAnimation();
+  const [ref4, isVisible4] = useScrollAnimation();
   return (
     <div>
-       <section className="bg-white xl:pb-40  xl:rounded-b-[20%]  2xl:rounded-b-[45%] mt-10 text-black py-20">
+       <section className="bg-white xl:pb-40  xl:rounded-b-[20%]  2xl:rounded-b-[45%] text-black py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full sm:text-sm text-[10px] font-medium tracking-wide uppercase">
-                Innovation • Technology • Mentorship
-              </span>
-            </div>
-            <h1 className="text-[33px] sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+          <div className="text-center  mb-20">
+
+            <h1 className={`text-[33px] ${styles['heading-animation']} sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight`}>
               Empowering{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-600 to-black">
                 Innovation through
@@ -30,7 +34,7 @@ function Shero() {
                 Services
               </span>
             </h1>
-            <p className="text-sm sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed  font-light">
+            <p className={`text-sm ${styles['subheading-animation']} sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed  font-light`}>
               From idea exploration to product deployment, Ilakkanam provides
               comprehensive services to bring your innovations to life with
               expert guidance and full-stack development.
@@ -39,7 +43,7 @@ function Shero() {
 
           {/* Advanced Service Cards Grid */}
           <div className="grid grid-cols-1  md:grid-cols-2 gap-8 mb-16">
-            <div className="group relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-2xl">
+            <div ref={ref1} className={`${isVisible1 ? styles['side-animation-show1'] : styles['side-animation1']} group relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-2xl`}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-100 to-transparent rounded-3xl opacity-50"></div>
               <div className="relative  flex flex-col justify-between h-full">
                 <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -60,7 +64,7 @@ function Shero() {
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-gray-900 to-black p-8 rounded-3xl text-white hover:shadow-2xl transition-all duration-300">
+            <div ref={ref2} className={`${isVisible2 ? styles['side-animation-show2'] : styles['side-animation2']} group  relative bg-gradient-to-br from-gray-900 to-black p-8 rounded-3xl text-white hover:shadow-2xl transition-all duration-300`}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-700 to-transparent rounded-3xl opacity-30"></div>
               <div className="relative  flex flex-col justify-between h-full">
                 <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -81,7 +85,7 @@ function Shero() {
               </div>
             </div>
 
-            <div className="group relative  bg-gradient-to-br from-black to-gray-900 p-8 rounded-3xl text-white hover:shadow-2xl transition-all duration-300">
+            <div ref={ref3} className={`${isVisible3 ? styles['side-animation-show3'] : styles['side-animation3']} group relative bg-gradient-to-br from-black to-gray-900 p-8 rounded-3xl text-white hover:shadow-2xl transition-all duration-300`}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-700 to-transparent rounded-3xl opacity-30"></div>
               <div className="relative flex flex-col justify-between h-full">
                 <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -102,7 +106,7 @@ function Shero() {
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-2xl">
+            <div ref={ref4} className={`${isVisible4 ? styles['side-animation-show4'] : styles['side-animation4'] } group relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-2xl`}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-100 to-transparent rounded-3xl opacity-50"></div>
               <div className="relative  flex flex-col justify-between h-full">
                 <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">

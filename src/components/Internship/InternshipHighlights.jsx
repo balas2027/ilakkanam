@@ -14,7 +14,8 @@ import feed5 from "../../assets/Internship/certificate_distribution/image5.jpg";
 import feed6 from "../../assets/Internship/certificate_distribution/image6.jpg";
 import feed7 from "../../assets/Internship/certificate_distribution/image7.jpg";
 import feed8 from "../../assets/Internship/certificate_distribution/image8.jpg";
-import feed9 from "../../assets/Internship/certificate_distribution/image9.jpg";
+import feed11 from "../../assets/Internship/certificate_distribution/image12.jpg";
+import styles from "../../css/Internship.Module.css";
 
 function InternshipHighlights() {
   const arr = [
@@ -25,18 +26,23 @@ function InternshipHighlights() {
     { url: image5 },
     { url: image6 },
     { url: image7 },
+    { url: image5 },
+    { url: image6 },
+    { url: image7 },
   ];
   const arr1 = [
     { url: feed1 },
-    { url: feed2 },
     { url: feed3 },
     { url: feed4 },
+    { url: feed2 },
     { url: feed5 },
     { url: feed6 },
+    { url: feed11 },
+    { url: feed3 },
     { url: feed7 },
     { url: feed8 },
-    { url: feed9 },
-   
+
+    { url: feed2 },
   ];
 
   return (
@@ -50,10 +56,12 @@ function InternshipHighlights() {
           students with real-world skills and industry exposure.
         </p>
 
-        <h1 className="text-3xl sm:text-4xl pt-5 font-bold">Intership Feedback</h1>
+        <h1 className="text-3xl sm:text-4xl pt-5 font-bold">
+          Intership Feedback
+        </h1>
 
         <div className="max-w-7xl mx-auto py-3 sm:py-10 overflow-hidden">
-          <div className="flex space-x-6  loop animate-scroll px-4 ">
+          <div className={`flex space-x-6 ${styles['loop']} ${styles['animate-scroll']} px-4`}>
             {arr.map((images, index) => (
               <div
                 key={index}
@@ -69,9 +77,11 @@ function InternshipHighlights() {
           </div>
         </div>
 
-        <h1 className="text-3xl mt-5 sm:text-4xl font-bold">Certificate Distribution</h1>
+        <h1 className="text-3xl mt-5 sm:text-4xl font-bold">
+          Certificate Distribution
+        </h1>
         <div className="max-w-7xl mx-auto py-3 sm:py-10 overflow-hidden">
-          <div className="flex space-x-6  loop animate-scroll px-4 ">
+          <div className={`flex space-x-6 ${styles['loop']} ${styles['animate-scroll1']} px-4`}>
             {arr1.map((images, index) => (
               <div
                 key={index}
