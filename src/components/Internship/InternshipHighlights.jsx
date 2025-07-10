@@ -15,7 +15,7 @@ import feed6 from "../../assets/Internship/certificate_distribution/image6.jpg";
 import feed7 from "../../assets/Internship/certificate_distribution/image7.jpg";
 import feed8 from "../../assets/Internship/certificate_distribution/image8.jpg";
 import feed11 from "../../assets/Internship/certificate_distribution/image12.jpg";
-import styles from "../../css/Internship.Module.css";
+import styles from "../../css/Internship.module.css";
 
 function InternshipHighlights() {
   const arr = [
