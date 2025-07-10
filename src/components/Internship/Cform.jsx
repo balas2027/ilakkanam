@@ -11,7 +11,7 @@ import {
   Building2,
 } from "lucide-react";
 import useScrollAnimation from "../../scrollanimation";
-import styles from "../../css/Internship.Module.css";
+import styles from "../../css/Internship.module.css";
 
 const JobApplicationForm = () => {
   const [formData, setFormData] = useState({
