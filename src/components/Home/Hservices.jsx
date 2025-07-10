@@ -37,7 +37,7 @@ function ServicesCarousel() {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 xl:gap-16 items-center">
           {/* Vertical Carousel */}
           <div className="order-2 lg:order-1">
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
