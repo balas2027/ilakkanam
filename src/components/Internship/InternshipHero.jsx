@@ -4,7 +4,7 @@ import bgline from "../../assets/bg-line.png";
 import carrer1 from "../../assets/bg-small.png";
 import underlinein from '../../assets/underlineintern.png';
 import useScrollAnimation from "../../scrollanimation";
-import styles from '../../css/Internship.Module.css';
+import styles from '../../css/Internship.module.css';
 function HeroCareer() {
  
  const [ref1, isVisible1] = useScrollAnimation();
