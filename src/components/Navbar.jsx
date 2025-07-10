@@ -41,13 +41,18 @@ function Example() {
   const [isLoading, setIsLoading] = useState(false);
 
   // Handle navigation with delay and preloader
-  const handleNavigation = (href, event) => {
+  const handleNavigation = (href, event, close) => {
     event.preventDefault();
 
     // Don't navigate if already on the same page
     if (location.pathname === href) {
+      // Close mobile menu if provided
+      if (close) close();
       return;
     }
+
+    // Close mobile menu if provided
+    if (close) close();
 
     // Show preloader
     setIsLoading(true);
@@ -84,78 +89,82 @@ function Example() {
         as="nav"
         className="bg-black fixed overflow-x-hidden left-0 right-0 z-50 top-0 "
       >
-        <div className="2xl:mx-15 xl:mx-10 mx-5 ">
-          <div className="mx-auto w-full px-2  lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button */}
-                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  <Bars3Icon
-                    aria-hidden="true"
-                    className="block size-6 group-data-open:hidden"
-                  />
-                  <XMarkIcon
-                    aria-hidden="true"
-                    className="hidden size-6 group-data-open:block"
-                  />
-                </DisclosureButton>
-              </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-                <div className="flex gap-x-3 items-center">
-                  <img
-                    alt="Your Company"
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                    className="h-8 w-auto"
-                  />
-                  <div className="lg:text-lg sm:hidden block lg:block  text-white sm:font-medium lg:font-bold">
-                    ILAKKANAM PRIVATE LIMITED
+        {({ close }) => (
+          <>
+            <div className="2xl:mx-15 xl:mx-10 mx-5 ">
+              <div className="mx-auto w-full px-2  lg:px-8">
+                <div className="relative flex h-16 items-center justify-between">
+                  <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    {/* Mobile menu button */}
+                    <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset">
+                      <span className="absolute -inset-0.5" />
+                      <span className="sr-only">Open main menu</span>
+                      <Bars3Icon
+                        aria-hidden="true"
+                        className="block size-6 group-data-open:hidden"
+                      />
+                      <XMarkIcon
+                        aria-hidden="true"
+                        className="hidden size-6 group-data-open:block"
+                      />
+                    </DisclosureButton>
+                  </div>
+                  <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+                    <div className="flex gap-x-3 items-center">
+                      <img
+                        alt="Your Company"
+                        src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                        className="h-8 sm:block hidden w-auto"
+                      />
+                      <div className="lg:text-lg sm:hidden block lg:block  text-white sm:font-medium lg:font-bold">
+                        ILAKKANAM PRIVATE LIMITED
+                      </div>
+                    </div>
+                    <div className="hidden sm:ml-6 sm:block">
+                      <div className="flex xl:space-x-4">
+                        {navigation.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            onClick={(e) => handleNavigation(item.href, e)}
+                            className={classNames(
+                              location.pathname === item.href
+                                ? "underline underline-offset-4 bg-white text-black"
+                                : "text-gray-300 ",
+                              "rounded-md px-3 group py-2 text-sm font-medium cursor-pointer hover:bg-white transition-all duration-300  hover:text-black"
+                            )}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex xl:space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        onClick={(e) => handleNavigation(item.href, e)}
-                        className={classNames(
-                          location.pathname === item.href
-                            ? "underline underline-offset-4 bg-white text-black"
-                            : "text-gray-300 ",
-                          "rounded-md px-3 group py-2 text-sm font-medium cursor-pointer hover:bg-white transition-all duration-300  hover:text-black"
-                        )}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
               </div>
-            </div>
-          </div>
 
-          <DisclosurePanel className="sm:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleNavigation(item.href, e)}
-                  className={classNames(
-                    location.pathname === item.href
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium cursor-pointer"
-                  )}
-                >
-                  {item.name}
-                </a>
-              ))}
+              <DisclosurePanel className="sm:hidden">
+                <div className="space-y-1 px-2 pt-2 pb-3">
+                  {navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={(e) => handleNavigation(item.href, e, close)}
+                      className={classNames(
+                        location.pathname === item.href
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium cursor-pointer"
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </DisclosurePanel>
             </div>
-          </DisclosurePanel>
-        </div>
+          </>
+        )}
       </Disclosure>
     </>
   );
