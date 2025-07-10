@@ -37,7 +37,7 @@ export const usePrevNextButtons = (emblaApi) => {
 export const PrevButton = ({ children, ...restProps }) => (
   <button
     type="button"
-    className="appearance-none text-white touch-manipulation  cursor-pointer border-0 p-0 m-0 bg-black w-14 h-14 z-[1] rounded-full flex items-center justify-center disabled:text-[--detail-high-contrast]"
+    className="appearance-none text-white touch-manipulation  cursor-pointer border-0 p-0 m-0 bg-black sm:w-14 sm:h-14 w-10 h-10 z-[1] rounded-full flex items-center justify-center disabled:text-[--detail-high-contrast]"
     {...restProps}
   >
     <svg className="w-[35%] h-[35%] text-current" viewBox="0 0 532 532">
@@ -53,7 +53,7 @@ export const PrevButton = ({ children, ...restProps }) => (
 export const NextButton = ({ children, ...restProps }) => (
   <button
     type="button"
-    className="appearance-none touch-manipulation bg-black text-white cursor-pointer border-0 p-0 m-0  shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] w-14 h-14 z-[1] rounded-full flex items-center justify-center disabled:text-[--detail-high-contrast]"
+    className="appearance-none touch-manipulation bg-black text-white cursor-pointer border-0 p-0 m-0  shadow-[inset_0_0_0_0.2rem_var(--detail-medium-contrast)] sm:w-14 sm:h-14 h-10 w-10 z-[1] rounded-full flex items-center justify-center disabled:text-[--detail-high-contrast]"
     {...restProps}
   >
     <svg className="w-[35%] h-[35%] text-current" viewBox="0 0 532 532">

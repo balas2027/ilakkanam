@@ -1,50 +1,48 @@
 import React from "react";
-  // Services data
-  const services = [
-    {
-      id: 1,
-      title: "Web Development",
-      description:
-        "Create stunning, responsive websites that engage your audience and drive business growth. Our expert developers use cutting-edge technologies to build fast, secure, and scalable web solutions.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      features: ["Responsive Design", "Performance Optimized", "SEO Ready"],
-    },
-    {
-      id: 2,
-      title: "Mobile Applications",
-      description:
-        "Transform your business with powerful mobile apps that provide seamless user experiences across all devices. Native and cross-platform development solutions tailored to your needs.",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
-      features: ["Cross-Platform", "User-Friendly", "Secure"],
-    },
-    {
-      id: 3,
-      title: "Digital Marketing",
-      description:
-        "Boost your online presence with comprehensive digital marketing strategies. From SEO to social media management, we help you reach your target audience effectively.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      features: ["SEO Optimization", "Social Media", "Analytics"],
-    },
-    {
-      id: 4,
-      title: "Cloud Solutions",
-      description:
-        "Leverage the power of cloud computing to scale your business operations. Secure, reliable, and cost-effective cloud infrastructure and migration services.",
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
-      features: ["Scalable", "Secure", "Cost-Effective"],
-    },
-    {
-      id: 5,
-      title: "Consulting Services",
-      description:
-        "Expert guidance to help you make informed technology decisions. Strategic consulting to align your business goals with the right technology solutions.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
-      features: ["Strategic Planning", "Expert Advice", "Custom Solutions"],
-    },
-  ];
+import image1 from "../../assets/HomePageServices/innovation.png";
+import image2 from "../../assets/HomePageServices/engineering.png";
+import image3 from "../../assets/HomePageServices/rd.png";
+import image4 from "../../assets/HomePageServices/startup.png";
+import image5 from "../../assets/HomePageServices/website.png";
+
+// Services data
+const services = [
+  {
+    id: 1,
+    title: "Student Innovation & Engagement Services",
+    description:
+      "Empowering young innovators through guided mentorship, real-time prototyping, and active participation in hackathons, internships, and industry collaborations. We bridge the gap between academics and innovation by helping students turn their ideas into impactful solutions.",
+
+    image: image1,
+  },
+  {
+    id: 2,
+    title: "Engineering & Technology Services",
+    description:
+      "From design to deployment, we develop scalable, robust solutions in embedded systems, IoT, and automation. Our expert team transforms technical concepts into real-world applications, helping clients across domains build next-gen tech products.",
+
+    image: image2,
+  },
+  {
+    id: 3,
+    title: "Consulting, R&D & Business Enablement",
+    description:
+      "We offer expert consulting, market-aligned R&D, and business support to accelerate innovation. From concept validation to execution strategy, we help startups and enterprises unlock growth with tailored guidance and technical expertise.",
+    image: image3,
+  },
+  {
+    id: 4,
+    title: "Start-Up & Project Enablement",
+    description:
+      "We empower startups and MSMEs to thrive with the right ecosystem—offering end-to-end project support, funding assistance, and execution frameworks to help you go from concept to company.",
+    image: image4,
+  },
+  {
+    id: 5,
+    title: "Reliable Digital Solutions & Web Services",
+    description:
+      "We craft reliable, scalable, and modern web solutions. From PHP and MERN development to complete e-commerce platforms and hosting services, Ilakkanam helps you bring your digital ideas to life.",
+    image: image5,
+  },
+];
 export default services;

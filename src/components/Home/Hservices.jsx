@@ -16,19 +16,10 @@ function ServicesCarousel() {
     setCurrentSlide(index);
   };
 
-  // Auto-play functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === services.length - 1 ? 0 : prev + 1));
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [services.length]);
-
   const currentService = services[currentSlide];
 
   return (
-    <section className="min-h-screen group relative bg-white py-16 lg:py-20">
+    <section className=" group relative bg-gray-100/50 py-16 lg:py-20">
       <div className="absolute h-52 z-10 bottom-0 w-full rounded-t-full transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-100/1 via-blue-100/10 to-blue-200 pointer-events-none"></div>
       <div className="absolute h-52 z-10 top-0 w-full rounded-b-full transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-200 via-blue-100/10 to-blue-100/1 pointer-events-none"></div>
 
@@ -46,7 +37,7 @@ function ServicesCarousel() {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-16 items-center">
           {/* Vertical Carousel */}
           <div className="order-2 lg:order-1">
             <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
@@ -59,11 +50,11 @@ function ServicesCarousel() {
                   {services.map((service, index) => (
                     <div
                       key={service.id}
-                      className="min-h-full flex-shrink-0 p-8"
+                      className="min-h-full flex-shrink-0 p-2 sm:p-8"
                     >
                       <div className="h-full flex flex-col justify-center">
                         <div className="flex items-center mb-6">
-                          <div className="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                          <div className="w-12 sm:flex hidden h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full items-center justify-center text-white font-bold text-lg mr-4">
                             {service.id}
                           </div>
                           <h3 className="text-2xl font-bold text-gray-900">
@@ -100,14 +91,14 @@ function ServicesCarousel() {
           </div>
 
           {/* Content Display */}
-          <div className="order-1 hidden md:block lg:order-2">
+          <div className="order-1 hidden lg:block lg:order-2">
             <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-2xl overflow-hidden">
               {/* Image Section */}
               <div className="h-64  sm:h-80 lg:h-120 overflow-hidden">
                 <img
                   src={currentService.image}
                   alt={currentService.title}
-                  className="w-full h-full object-cover transition-all duration-700 ease-in-out "
+                  className="w-full h-full object-fluid transition-all duration-700 ease-in-out "
                 />
               </div>
             </div>

@@ -4,6 +4,7 @@ import React from "react";
 import { cn } from "../../lib/utils";
 import { Link } from "react-router-dom";
 import gridbg from '../../assets/gridbg.png'
+import styles from '../../css/home.module.css';
 
 function IlakkanamHero() {
 return (
@@ -13,26 +14,26 @@ return (
         {/* <div className="absolute inset-0  h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" /> */}
         {/* <Boxes /> */}
         
-        <div className="relative z-20 max-w-4xl backdrop-blur-[3px] mx-auto text-center space-y-6">
+        <div className="relative  z-20 max-w-4xl backdrop-blur-[3px] mx-auto text-center space-y-6">
             <h1
                 className={cn(
-                    "text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4",
+                    `{text-4xl ${styles['heading-animation']}  md:text-6xl lg:text-7xl text-4xl font-bold text-white mb-4}`,
                     "bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent"
                 )}
             >
                 Welcome to ILAKKANAM
             </h1>
 
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-blue-200 mb-6">
+            <h2 className={`text-2xl ${styles['heading-animation']} md:text-3xl lg:text-4xl font-semibold text-blue-200 mb-6`}>
                 Where Innovation Meets Purpose
             </h2>
 
-            <p className="text-lg md:text-xl text-neutral-300 leading-relaxed  max-w-3xl mx-auto mb-8">
+            <p className={`text-lg ${styles['subheading-animation']} md:text-xl text-neutral-300 leading-relaxed  max-w-3xl mx-auto mb-8`}>
                 We are a research-driven company transforming ideas into real-world solutions.
                 From engineering to emerging technologies, we collaborate, innovate, and create
                 with passion and precision.
             </p>
-
+    <div className={`${styles['para-animation']}`}>
             <div className="flex items-center justify-center space-x-3 mb-10">
                 <p className="text-lg md:text-xl text-cyan-200 font-medium italic">
                     Empowering progress through creativity, trust, and world-class R&D
@@ -48,6 +49,7 @@ return (
                 <Link to="/contactus" className="group cursor-pointer relative px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-slate-900 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                     <span className="relative z-10">Get in Touch</span>
                 </Link>
+            </div>
             </div>
         </div>
     </div>

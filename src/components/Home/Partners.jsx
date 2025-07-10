@@ -1,4 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import partner1 from "../../assets/Partners/partner1.png";
+import partner2 from "../../assets/Partners/partner2.png";
+import partner3 from "../../assets/Partners/partner3.png";
+import partner4 from "../../assets/Partners/partner4.png";
 
 const LogoCarousel = () => {
   const carouselRef = useRef(null);
@@ -7,44 +11,20 @@ const LogoCarousel = () => {
   const logos = [
     {
       name: "Facebook",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/facebook.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/facebook.svg"
+      colorSrc: partner1,
     },
     {
       name: "Disney",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/disney.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/disney.svg"
+      colorSrc: partner2,
     },
     {
       name: "Airbnb",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/airbnb.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/airbnb.svg"
+      colorSrc: partner3,
     },
     {
       name: "Apple",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/apple.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/apple.svg"
+      colorSrc: partner4,
     },
-    {
-      name: "Spark",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/spark.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/spark.svg"
-    },
-    {
-      name: "Samsung",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/samsung.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/samsung.svg"
-    },
-    {
-      name: "Quora",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/quora.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/quora.svg"
-    },
-    {
-      name: "Sass",
-      colorSrc: "https://cruip-tutorials.vercel.app/logo-carousel/sass.svg",
-      bwSrc: "https://cruip-tutorials.vercel.app/logo-carousel/sass.svg"
-    }
   ];
 
   // Triple the logos for seamless infinite scroll
@@ -57,8 +37,8 @@ const LogoCarousel = () => {
     const updateCenterLogo = () => {
       const carouselRect = carousel.getBoundingClientRect();
       const carouselCenter = carouselRect.left + carouselRect.width / 2;
-      
-      const logoElements = carousel.querySelectorAll('.logo-item');
+
+      const logoElements = carousel.querySelectorAll(".logo-item");
       let closestIndex = 0;
       let closestDistance = Infinity;
 
@@ -66,7 +46,7 @@ const LogoCarousel = () => {
         const logoRect = logo.getBoundingClientRect();
         const logoCenter = logoRect.left + logoRect.width / 2;
         const distance = Math.abs(logoCenter - carouselCenter);
-        
+
         if (distance < closestDistance) {
           closestDistance = distance;
           closestIndex = index % logos.length;
@@ -77,26 +57,28 @@ const LogoCarousel = () => {
     };
 
     const interval = setInterval(updateCenterLogo, 100);
-    
+
     return () => clearInterval(interval);
   }, [logos.length]);
 
   return (
     <div className="relative font-inter antialiased">
-      <main className="relative h-50 bg-black flex flex-col justify-center overflow-hidden">
+      <main className="relative h-60 bg-black flex flex-col justify-center overflow-hidden">
         <div className="w-full max-w-5xl mx-auto px-4 md:px-6 py-24">
           <div className="text-center">
-            
+            <h2 className="md:text-6xl sm:text-5xl text-shadow-amber-300 text-shadow-2xs  text-3xl sm:mb-15 font-bold text-white/90 mb-6">
+              Our Partners
+            </h2>
             {/* Logo Carousel animation */}
             <div
               ref={carouselRef}
               className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
             >
-              <div className="flex items-center justify-center md:justify-start animate-infinite-scroll">
+              <div className="flex items-center justify-center md:justify-start gap-10 animate-infinite-scroll">
                 {duplicatedLogos.map((logo, index) => {
                   const originalIndex = index % logos.length;
                   const isCenter = originalIndex === centerLogo;
-                  
+
                   return (
                     <div
                       key={`${logo.name}-${index}`}
@@ -106,12 +88,14 @@ const LogoCarousel = () => {
                         src={logo.colorSrc}
                         alt={logo.name}
                         className={`max-w-none transition-all duration-500 transform ${
-                          isCenter 
-                            ? 'scale-110 opacity-100 filter-none' 
-                            : 'scale-100 opacity-60 grayscale'
+                          isCenter
+                            ? "scale-110 opacity-100 filter-none"
+                            : "scale-100 opacity-60 grayscale"
                         }`}
                         style={{
-                          filter: isCenter ? 'none' : 'grayscale(100%) brightness(0.7)'
+                          filter: isCenter
+                            ? "none"
+                            : "grayscale(100%) brightness(0.7)",
                         }}
                       />
                     </div>
@@ -120,7 +104,6 @@ const LogoCarousel = () => {
               </div>
             </div>
             {/* End: Logo Carousel animation */}
-            
           </div>
         </div>
       </main>
@@ -145,8 +128,8 @@ const styles = `
 `;
 
 // Inject styles
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement('style');
+if (typeof document !== "undefined") {
+  const styleSheet = document.createElement("style");
   styleSheet.innerText = styles;
   document.head.appendChild(styleSheet);
 }

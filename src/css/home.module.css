@@ -1,0 +1,51 @@
+.heading-animation{
+    animation: heading-animate 1s ease-out forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes heading-animate {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.subheading-animation{
+    animation: subheading-animate 1s ease-out forwards;
+    animation-iteration-count: 1;
+     animation-delay: 0.5s;
+     opacity:0;
+}
+
+@keyframes subheading-animate {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.para-animation{
+    animation: para-animate 1s ease-out forwards;
+    animation-iteration-count: 1;
+     animation-delay: 1s;
+     opacity:0;
+}
+
+@keyframes para-animate {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

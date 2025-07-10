@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 function Habout() {
   return (
     // xl:sticky xl:top-0
-    <section className=" relative group my-5 w-full flex justify-center  min-h-screen py-12 lg:py-20">
+    <section className=" relative group my-5 w-full flex justify-center  py-5 xl:py-20">
       <div className="absolute h-52 z-10 bottom-0 w-full rounded-t-full transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-100/1 via-blue-100/10 to-blue-200 pointer-events-none"></div>
       <div className="absolute h-52 z-10 top-0 w-full rounded-b-full transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-200 via-blue-100/10 to-blue-100/1 pointer-events-none"></div>
-      <div className="container mx- px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-26">
+      <div className="container px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-26">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center min-h-[calc(100vh-6rem)]">
           {/* Image Section - Tilted Card Style */}
           <div className="flex-1 flex items-center justify-center  lg:justify-start">
@@ -53,7 +53,7 @@ function Habout() {
                 </div>
 
                 {/* Vision & Goal Cards */}
-                <div className="xl:flex flex-col sm:space-y-0 space-y-5 sm:flex-row gap-4 mt-8">
+                <div className="xl:flex flex-col hidden sm:space-y-0 space-y-5 sm:flex-row gap-4 mt-8">
                   <div className="flex-1 bg-gradient-to-br from-pink-50/30 to-red-50/30 p-4 rounded-lg border border-pink-100/50">
                     <div className="flex items-center space-x-3 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-red-400 rounded-full flex items-center justify-center flex-shrink-0">
