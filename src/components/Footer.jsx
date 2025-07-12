@@ -1,21 +1,17 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowRight } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
-  const handleWhoWeAreClick = (e) => {
-    e.preventDefault();
-    
-   
-    window.location.href = '/about#who-we-are';
-    
-   
-  };
-const year = new Date().getFullYear();
+
+
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-black pt-10 text-white">
-      <div className="container  mx-auto px-4 pb-5 pt-16">
+      <div className="container mx-auto px-4 pb-5 pt-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
-
+          
           {/* Brand Overview */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-3">
@@ -32,13 +28,13 @@ const year = new Date().getFullYear();
             {/* Get Started Section */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-white">Take the first step</h3>
-              <a
-                href="/contactus"
+              <HashLink
+                to="/contactus"
                 className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
               >
                 <span>Let's Talk</span>
                 <ArrowRight size={18} />
-              </a>
+              </HashLink>
             </div>
           </div>
 
@@ -47,29 +43,29 @@ const year = new Date().getFullYear();
             <h3 className="text-lg font-semibold text-white">Discover</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/services" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/services" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   What We Offer
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="/products" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/products" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Our Solutions
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="/gallery" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/gallery" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Success Stories
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="/internships" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/internships" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Why Choose Us
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="/services" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/services" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Plans & Pricing
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>
@@ -79,33 +75,33 @@ const year = new Date().getFullYear();
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Start Here
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a 
-                  href="/about#who-we-are" 
-                  onClick={handleWhoWeAreClick}
+                <HashLink
+                  to="/about#who-we-are"
+
                   className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm cursor-pointer"
                 >
                   Who We Are
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="/gallery" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/gallery" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Insights & Articles
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="/contactus" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/contactus" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Get in Touch
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="/404" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
+                <HashLink to="/404" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm">
                   Page Not Found
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>
@@ -115,28 +111,28 @@ const year = new Date().getFullYear();
             <h3 className="text-lg font-semibold text-white">Connect with Us</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
+                <HashLink to="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
                   <Instagram size={16} />
                   <span>Follow on Instagram</span>
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
+                <HashLink to="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
                   <Facebook size={16} />
                   <span>Like on Facebook</span>
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
+                <HashLink to="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
                   <Linkedin size={16} />
                   <span>Connect on LinkedIn</span>
-                </a>
+                </HashLink>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
+                <HashLink to="#" className="text-gray-300 hover:text-pink-400 transition-colors duration-200 text-sm flex items-center space-x-2">
                   <Twitter size={16} />
                   <span>Tweet with Us</span>
-                </a>
+                </HashLink>
               </li>
             </ul>
           </div>
@@ -146,15 +142,22 @@ const year = new Date().getFullYear();
         <div className="border-t border-gray-800 mt-16 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-sm text-center sm:text-left">
-              © {year} Ilakkanam. All rights reserved. | Designed & Developed with ❤️ by Balaskanthan AK.
+              © {year} Ilakkanam. All rights reserved. | Designed & Developed with ❤️ by{" "}
+              <a
+                href="https://balaskanthan.vercel.app"
+                className="underline text-pink-600 hover:text-blue-600 transition-all duration-1000"
+                aria-label="balaskanthan portfolio"
+              >
+                Balaskanthan AK.
+              </a>
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end space-x-6">
-              <a href="/privacy" className="text-gray-400 hover:text-pink-400 text-sm transition-colors duration-200">
+              <HashLink to="/privacy" className="text-gray-400 hover:text-pink-400 text-sm transition-colors duration-200">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="text-gray-400 hover:text-pink-400 text-sm transition-colors duration-200">
+              </HashLink>
+              <HashLink to="/terms" className="text-gray-400 hover:text-pink-400 text-sm transition-colors duration-200">
                 Terms & Conditions
-              </a>
+              </HashLink>
             </div>
           </div>
         </div>
@@ -162,7 +165,5 @@ const year = new Date().getFullYear();
     </footer>
   );
 };
-
-
 
 export default Footer;

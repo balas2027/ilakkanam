@@ -42,10 +42,11 @@ function SaasProductGallery({ projects }) {
   const currentProject = projects[activeIndex];
 
   return (
-    <div className="min-h-screen group  bg-gradient-to-br from-white/8 via-black to-white/5 bg-black">
+    
+    <div id="products" className="md:py-20 pu-10 group  bg-gradient-to-br from-white/8 via-black to-white/5 bg-black">
     <div className="text-transparent relative max-w-fit mx-auto  bg-clip-text bg-gradient-to-l from-white to-white/60 text-4xl sm:text-5xl text-center w-full font-bold">Explore Our Solutions
   <div className="absolute sm:left-auto left-10 sm:right-3 transform lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-[2000ms] mt-1">
-    <img src={Underline} alt="" />
+    <img src={Underline} alt=""  />
   </div>
 
     </div>
@@ -58,7 +59,7 @@ function SaasProductGallery({ projects }) {
               <img
                 src={currentProject.url}
                 alt={currentProject.title}
-                className="w-full hover:scale-120  h-full object-cover transition-all duration-1000"
+                className="w-full hover:scale-110  brightness-50 hover:brightness-100 h-full object-cover transition-all duration-1000"
               />
               
               {/* Navigation Arrows */}
@@ -83,7 +84,7 @@ function SaasProductGallery({ projects }) {
               {/* Stage Badge */}
               <div className="absolute top-6 left-6">
                 <span className="px-4 py-2 text-white text-sm font-medium rounded-full">
-                  {currentProject.stage}
+                  
                 </span>
               </div>
 

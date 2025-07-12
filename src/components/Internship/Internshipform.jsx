@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import emailjs from "@emailjs/browser";
 function InternshipForm() {
   const form = useForm();
 
@@ -11,9 +11,43 @@ function InternshipForm() {
     handleSubmit,
   } = form;
 
-  function onsubmit(data) {
-    console.log(data);
-    reset();
+  function onsubmit(_, event) {
+    const formElements = event.target.elements;
+
+    const data = {
+      name: formElements.name.value,
+      email: formElements.email.value,
+      phone: formElements.phone.value,
+      linkedin: formElements.linkedin.value,
+      github: formElements.github.value,
+      portfolio: formElements.portfolio.value,
+      university: formElements.university.value,
+      course: formElements.course.value,
+      year: formElements.year.value,
+      role: formElements.role.value,
+      duration: formElements.duration.value,
+      startDate: formElements.startDate.value,
+      availability: formElements.availability.value,
+      experience: formElements.experience.value,
+      skills: formElements.skills.value,
+      message: formElements.message.value,
+    };
+
+    const serviceID = "service_zgvvre4";
+    const templateID = "template_qe1eqwk";
+    const publicKey = "yw2UL0LiuYSX38szX";
+
+    emailjs
+      .send(serviceID, templateID, data, publicKey)
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Application submitted successfully!");
+        reset(); // reset form
+      })
+      .catch((err) => {
+        console.error("FAILED...", err);
+        alert("Something went wrong. Please try again.");
+      });
   }
 
   return (
@@ -27,7 +61,7 @@ function InternshipForm() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit(onsubmit)}>
+      <form onSubmit={handleSubmit((_, e) => onsubmit(_, e))}>
         <div className="space-y-8">
           {/* Personal Information Section */}
           <div className="bg-gray-50 p-6 rounded-lg">
@@ -157,11 +191,11 @@ function InternshipForm() {
                 <input
                   type="text"
                   name="university"
-                  {...register("university" , {required : "required"})}
+                  {...register("university", { required: "required" })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Your university name"
                 />
-                <p style={{color :"red"}}>{errors.university?.message}</p>
+                <p style={{ color: "red" }}>{errors.university?.message}</p>
               </div>
 
               <div>
@@ -171,11 +205,11 @@ function InternshipForm() {
                 <input
                   type="text"
                   name="course"
-                    {...register("course" , {required : "required"})}
+                  {...register("course", { required: "required" })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="e.g., Computer Science, Design"
                 />
-                 <p style={{color :"red"}}>{errors.course?.message}</p>
+                <p style={{ color: "red" }}>{errors.course?.message}</p>
               </div>
 
               <div>
@@ -184,7 +218,7 @@ function InternshipForm() {
                 </label>
                 <select
                   name="year"
-                    {...register("year" , {required : "required"})}
+                  {...register("year", { required: "required" })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select year</option>
@@ -195,7 +229,7 @@ function InternshipForm() {
                   <option value="Final Year">Final Year</option>
                   <option value="Graduate">Graduate</option>
                 </select>
-                <p style={{color : "red"}}>{errors.year?.message}</p>
+                <p style={{ color: "red" }}>{errors.year?.message}</p>
               </div>
             </div>
           </div>
@@ -224,7 +258,7 @@ function InternshipForm() {
                 </label>
                 <select
                   name="role"
-                      {...register("role", {required:"Please mention thr role"})}
+                  {...register("role", { required: "Please mention thr role" })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select a role</option>
@@ -239,16 +273,15 @@ function InternshipForm() {
                   <option value="Project Management">Project Management</option>
                   <option value="Quality Assurance">Quality Assurance</option>
                 </select>
-                <p style={{color:"red"}}>{errors.role?.message}</p>
+                <p style={{ color: "red" }}>{errors.role?.message}</p>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Internship Duration 
+                  Internship Duration
                 </label>
                 <select
                   name="duration"
-              
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select duration</option>
@@ -329,62 +362,11 @@ function InternshipForm() {
                 <textarea
                   name="skills"
                   rows="3"
-                  {...register("skills" , {required : "required"})}
+                  {...register("skills", { required: "required" })}
                   className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="List your technical skills, programming languages, tools, etc."
                 />
-                <p style={{color:"red"}}>{errors.skills?.message}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Documents Section */}
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-              <svg
-                className="w-5 h-5 mr-2 text-blue-600"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Documents
-            </h2>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Resume/CV
-              </label>
-              <div className="mt-1 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-400 transition-colors">
-                <div className="text-center">
-                  <svg
-                    className="mx-auto h-12 w-12 text-gray-400"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 48 48"
-                  >
-                    <path
-                      d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <input
-                    type="file"
-                    name="resume"
-                    accept=".pdf,.doc,.docx"
-                  
-                    className="mx-auto mt-4 block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                  />
-                  <p className="mt-2 text-sm text-gray-500">
-                    PDF, DOC, DOCX up to 5MB
-                  </p>
-                </div>
+                <p style={{ color: "red" }}>{errors.skills?.message}</p>
               </div>
             </div>
           </div>

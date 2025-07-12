@@ -28,12 +28,12 @@ import styles from '../../css/Internship.module.css';
           </p>
         </div>
         <div className="cta  flex space-x-3 md:space-x-10">
-          <button className={`text-white text-lg ${styles['group']} hover:bg-white hover:text-black hover:border transition-all duration-700 border-black font-medium bg-black p-3 sm:px-6 sm:py-4 rounded-xl`}>
+          <a href="#internshipavailable" className={`text-white text-lg ${styles['group']} hover:bg-white hover:text-black hover:border transition-all duration-700 border-black font-medium bg-black p-3 sm:px-6 sm:py-4 rounded-xl`}>
             Explore Opportunities <ArrowRight className={`inline ml-2 ${styles['arrow-icon']}`} />
-          </button>
-          <button className={`text-white text-lg ${styles['group']} hover:bg-white hover:text-black hover:border transition-all duration-700 border-black font-medium bg-black p-3 sm:px-6 sm:py-4 rounded-xl`}>
+          </a>
+          <a href="#careerform" className={`text-white text-lg ${styles['group']} hover:bg-white hover:text-black hover:border transition-all duration-700 border-black font-medium bg-black p-3 sm:px-6 sm:py-4 rounded-xl`}>
             Apply Now <ArrowRight className={`inline ml-2 ${styles['arrow-icon']}`} />
-          </button>
+          </a>
         </div>
       </div>
       <div ref={ref2} className={`image  flex xl:justify-end justify-center relative w-full md:w-1/2 ${isVisible2 ? styles['side-animation-show'] : styles['side-animation']}`}>

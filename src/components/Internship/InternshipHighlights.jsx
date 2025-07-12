@@ -57,11 +57,13 @@ function InternshipHighlights() {
         </p>
 
         <h1 className="text-3xl sm:text-4xl pt-5 font-bold">
-          Intership Feedback
+          Internship Feedback
         </h1>
 
-        <div className="max-w-7xl mx-auto py-3 sm:py-10 overflow-hidden">
-          <div className={`flex space-x-6 ${styles['loop']} ${styles['animate-scroll']} px-4`}>
+        <div className="max-w-7xl mx-auto relative py-3 sm:py-10  overflow-hidden">
+          <div
+            className={`flex space-x-6 ${styles["loop"]} ${styles["animate-scroll"]} px-4`}
+          >
             {arr.map((images, index) => (
               <div
                 key={index}
@@ -81,7 +83,9 @@ function InternshipHighlights() {
           Certificate Distribution
         </h1>
         <div className="max-w-7xl mx-auto py-3 sm:py-10 overflow-hidden">
-          <div className={`flex space-x-6 ${styles['loop']} ${styles['animate-scroll1']} px-4`}>
+          <div
+            className={`flex space-x-6 ${styles["loop"]} ${styles["animate-scroll1"]} px-4`}
+          >
             {arr1.map((images, index) => (
               <div
                 key={index}

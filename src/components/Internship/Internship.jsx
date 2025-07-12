@@ -4,7 +4,7 @@ import Highlight from './Highlight';
 import Cform from './Cform'
 import InternshipHero from './InternshipHero'
 import IntershipHighlights from './InternshipHighlights';
-
+import Verify from './CertificateVerify';
 
 const AccordionItem = ({ header, text }) => {
   const [active, setActive] = useState(false);
@@ -73,8 +73,12 @@ const Accordion = () => {
     <InternshipHero />
    </div>
    <div>
+    <Verify />
+   </div>
+   <div>
     <IntershipHighlights />
    </div>
+   
 
 
     <section className="relative z-20 overflow-hidden mx-2 bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[30px]">

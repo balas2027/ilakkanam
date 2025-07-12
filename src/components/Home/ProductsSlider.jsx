@@ -35,8 +35,8 @@ const EmblaCarousel = ({ slides, options }) => {
   } = usePrevNextButtons(emblaApi)
 
   return (
-    <section className="w-full">
-      <div className="mx-3 sm:mx-5 lg:mx-25">
+    <section className="sm:mx-10 mx-3 xl:max-w-7xl xl:mx-auto">
+      <div className="">
         {/* Navigation buttons */}
         <div className="w-full flex justify-end pr-5 sm:mt-0 mt-4 mb-3 gap-4">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
@@ -51,7 +51,7 @@ const EmblaCarousel = ({ slides, options }) => {
                 key={slide.id}
                 className="transform-gpu group md:flex-[0_0_80%] flex-[0_0_100%] xl:flex-[0_0_50%] min-w-0 pr-4"
               >
-                <div className="relative overflow-hidden rounded-lg h-70 sm:h-100 lg:h-120 flex items-center justify-center select-none">
+                <div className="relative overflow-hidden rounded-lg h-70 sm:h-100 lg:h-100 flex items-center justify-center select-none">
                   {/* Background Image */}
                   <img
                     src={slide.image}
@@ -60,7 +60,7 @@ const EmblaCarousel = ({ slides, options }) => {
                   />
 
                   {/* Title Overlay */}
-                  <div className="z-10 text-3xl text-white font-extrabold text-center px-4">
+                  <div className="z-10 text-shadow-md text-shadow-cyan-700 text-3xl text-white font-extrabold text-center px-4">
                     {slide.title}
                   </div>
                 </div>

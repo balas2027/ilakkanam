@@ -7,6 +7,7 @@ import domain1 from "../../assets/About/domain1.jpeg";
 import domain2 from "../../assets/About/domain2.jpeg";
 import domain3 from "../../assets/About/domain3.jpeg";
 import contact from "../../assets/About/contact.jpeg";
+import { ArrowRight } from "lucide-react";
 function About() {
   return (
     <div className="mt-20 lg:mt-30 sm:mx-10 mx-3 lg:space-y-30 md:space-y-10 space-y-10  md:w-190 lg:w-250 xl:w-315 md:mx-auto">
@@ -20,24 +21,10 @@ function About() {
             through advanced engineering and R&D. Our team of passionate
             researchers, developers, and creators turn complex challenges into
             scalable solutions.
-            <button className="py-2 px-4 mt-5 sm:py-4 sm:px-8 rounded-full sm:mt-10 bg-black flex items-center justify-center">
-              <div className="name sm:text-xl font-semibold text-white">
+              <a href='contactus' className="bg-black group max-w-fit mt-5  cursor-pointer text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center hover:bg-white hover:text-black border duration-500 transition-colors">
                 Get Started
-              </div>
-              <svg
-                className="ml-2 w-6 h-4 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={3}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
+                <ArrowRight className="ml-2 w-5 h-5  arrow-icon" />
+              </a>
           </p>
         </div>
         <div className="image lg:w-125 xl:w-150 md:w-100">
@@ -194,7 +181,7 @@ function About() {
 
             {/* Button */}
             <a
-              href="/contactus"
+              href="contactus"
               className="inline-flex items-center gap-2 text-lg md:text-xl bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-black hover:text-white border-2 border-white group"
             >
               Contact Now

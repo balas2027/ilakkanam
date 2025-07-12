@@ -179,9 +179,9 @@ const Ilakkanam = () => {
                 Ilakkanam is your innovation partner. Reach out for mentorship,
                 explore our idea bank, or collaborate with like-minded creators.
               </p>
-              <button className="bg-white text-black  sm:px-16 py-5 rounded-2xl font-bold text-xl transition-all duration-200 shadow-2xl hover:bg-gray-800 cursor-pointer hover:text-white">
+              <a href="https://www.linkedin.com/company/ilakkanam-private-limited/" className="bg-white text-black  sm:px-16 py-5 rounded-2xl font-bold text-xl transition-all duration-200 shadow-2xl hover:bg-gray-800 cursor-pointer hover:text-white">
                 Join the Ilakkanam Community
-              </button>
+              </a>
             </div>
           </div>
         </div>

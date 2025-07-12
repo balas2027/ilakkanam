@@ -1,11 +1,13 @@
 import React from "react";
+import phase1 from "../../assets/Products/phase1.png";
+import phase2 from "../../assets/Products/phase2.png";
 import {
   Search,
   Lightbulb,
   Code2,
   TestTube,
   Rocket,
-  Headphones,
+  Handshake,
 } from "lucide-react";
 
 const DevelopmentStages = () => {
@@ -46,7 +48,7 @@ const DevelopmentStages = () => {
       phase: "Phase 05",
     },
     {
-      icon: Headphones,
+      icon: Handshake,
       title: "Support & Evolution",
       description:
         "Ongoing maintenance, feature enhancements, and continuous improvement based on real-world feedback.",
@@ -55,10 +57,10 @@ const DevelopmentStages = () => {
   ];
 
   return (
-    <section className="bg-white text-black py-24">
+    <section id="development_stages" className="bg-white text-black py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-16">
-          <div className="text-center space-y-6">
+          <div className="text-center relative space-y-6">
             <h2 className="text-4xl lg:text-5xl font-bold">
               How We Develop
               <span className="block text-gray-700">Your Solutions</span>

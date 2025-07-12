@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-export default function ProfessionalGallery({images}) {
+ function ProfessionalGallery({images}) {
   const [activeIndex, setActiveIndex] = useState(0);
   
     const nextSlide = () => {
@@ -119,3 +119,5 @@ export default function ProfessionalGallery({images}) {
     </div>
   );
 }
+
+export default ProfessionalGallery;

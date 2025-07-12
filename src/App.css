@@ -31,73 +31,15 @@ body {
 
 
 
- 
-<<<<<<< HEAD
+   .group:hover .arrow-icon{
+      animation: icon-side 0.8s ease-in-out infinite alternate;
     
-    .loop {
-      width: max-content;
     }
-    .animate-scroll:hover{
-      animation-play-state: paused;
-
-    }
-    .animate-scroll {
-      animation: scroll 35s linear;
-      
-      animation-iteration-count: infinite;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-    }
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-     
-      }
-      100% {
-        transform: translateX(-50%);
-       
-      }
-    }
- 
-
-    .side-animation-content{
-        animation : side-animate-content 1s linear;
-       
-         
-        
-    }
-
-
-     @keyframes side-animate-content{
-          0%{
-            transform : translateX(-50%);
-            opacity: 0;
-          }
-          100%{
-            transform : translateX(0%);
-            opacity:1;
-          }
-         }
-
-    .side-animation{
-        animation : side-animate 1s linear;
-       
-         
-         
-        
-    }
-
-
-     @keyframes side-animate{
-          0%{
-            transform : translateX(50%);
-            opacity: 0;
-          }
-          100%{
-            transform : translateX(0%);
-            opacity:1;
-          }
-         }
-=======
-    
->>>>>>> 6081bcb (Updated animation)
+@keyframes icon-side {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}

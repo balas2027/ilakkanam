@@ -156,9 +156,9 @@ function ContactUs() {
   return (
     <div className="min-h-screen relative bg-white">
       {/* Hero Section */}
-       <div className="relative group bg-white overflow-hidden">
-         <div className="absolute h-70 z-10 top-0  w-full   transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-200 via-blue-100/10 to-blue-100/5 pointer-events-none"></div>
-    
+      <div className="relative group bg-white overflow-hidden">
+        <div className="absolute h-70 z-10 top-0  w-full   transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-200 via-blue-100/10 to-blue-100/5 pointer-events-none"></div>
+
         <div className="relative max-w-7xl mt-10 flex items-center justify-center mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:py-20 lg:py-28">
           <div className="text-center">
             <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 mb-6 tracking-tight">
@@ -383,10 +383,10 @@ function ContactUs() {
             </form>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 lg:flex lg:flex-col lg:justify-between lg:py-10">
             <div className="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border border-slate-100">
               <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                Why Choose Assistify?
+                Why Choose Ilakkanam?
               </h3>
               <div className="space-y-6">
                 {features.map((feature, index) => (
@@ -409,11 +409,12 @@ function ContactUs() {
 
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
               <h3 className="text-xl font-bold text-slate-900 mb-4">
-                Trusted by Industry Leaders
+                Empowering Innovation with Ilakkanam
               </h3>
               <p className="text-slate-600 mb-6">
-                Join thousands of companies already using Assistify to power
-                their AI initiatives.
+                At Ilakkanam Private Limited, we collaborate with passionate
+                learners, startups, and institutions to drive digital
+                transformation through cutting-edge solutions.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {partners.map((partner, index) => (
@@ -438,8 +439,7 @@ function ContactUs() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Get quick answers to common questions about our AI assistant
-              platform.
+              Get quick answers to common questions about our company.
             </p>
           </div>
 

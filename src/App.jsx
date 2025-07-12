@@ -12,7 +12,7 @@ import Products from "./components/Products/Products";
 import Footer from "./components/Footer";
 import "./App.css";
 import InternshipForm from "./components/Internship/Internshipform";
-
+import CertificateVerification from './components/CertificateVerification'
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contactus" element={<Contactus />} />
           <Route path="/internship_apply" element={<InternshipForm />} />
+          <Route path="/verify_certificate" element={<CertificateVerification />} />
         </Routes>
         <Footer />
       </div>

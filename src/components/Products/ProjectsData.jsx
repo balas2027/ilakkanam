@@ -1,10 +1,16 @@
 import React, { useState, useRef } from 'react';
+import image1 from '../../assets/HomePageProducts/product1.jpeg'
+import image2 from '../../assets/HomePageProducts/product2.jpeg'
+import image3 from '../../assets/HomePageProducts/product3.png'
+import image4 from '../../assets/HomePageProducts/product4.png'
+import image5 from '../../assets/HomePageProducts/product5.png'
+import image6 from '../../assets/HomePageProducts/product6.jpeg'
 
 // Data Component - Contains all project data
 const projectsData = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
+    url: image6 ,
     title: "Hand-Held Braille Device",
     category: "Assistive Technology",
     stage: "Patent Filed",
@@ -28,7 +34,7 @@ const projectsData = [
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+    url: image3,
     title: "Intelligent Head Protecting Safety Helmet",
     category: "IoT & Safety",
     stage: "Production Ready",
@@ -52,7 +58,7 @@ const projectsData = [
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
+    url: image4,
     title: "Active Vacuum Suspension System",
     category: "Automotive Innovation", 
     stage: "Testing Phase",
@@ -76,7 +82,7 @@ const projectsData = [
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
+    url: image5,
     title: "KARTHAVYA - Data Acquisition System",
     category: "AI & Workforce Management",
     stage: "Deployed",
@@ -100,7 +106,7 @@ const projectsData = [
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+    url:image1,
     title: "Hybrid Solar Desalination System",
     category: "Renewable Energy",
     stage: "Prototype Testing",
@@ -124,7 +130,7 @@ const projectsData = [
   },
   {
     id: 6,
-    url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
+    url: image2,
     title: "Adaptive Handicap Vehicle",
     category: "Mobility Solutions",
     stage: "Production Ready",

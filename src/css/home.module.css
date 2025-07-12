@@ -49,3 +49,43 @@
     opacity: 1;
   }
 }
+
+
+.side-animation-content {
+  opacity: 0;
+}
+
+.side-animation-content-show {
+  animation: side-animate-content 1.3s ease-out forwards;
+}
+
+@keyframes side-animate-content {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+.side-animation{
+  opacity: 0;
+}
+
+.side-animation-show {
+  animation: side-animate 1s ease-out forwards;
+}
+
+@keyframes side-animate {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}

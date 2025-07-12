@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import useScrollAnimation from '../../scrollanimation';
 import styles from '../../css/services.module.css';
+import { HashLink } from 'react-router-hash-link';
 
 
 function Shero() {
@@ -58,7 +59,7 @@ function Shero() {
                   incubation challenges.
                 </p>
                 <div className="flex items-center cursor-pointer text-black font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  <span>Vist Our Success</span>
+               <HashLink to="/#awards"><p>Vist Our Success</p></HashLink> 
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </div>
               </div>
@@ -78,8 +79,8 @@ function Shero() {
                   support—ranging from full-stack web apps, IoT devices, to
                   AI/ML-based systems.
                 </p>
-                <div className="flex items-center cursor-pointer text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  <span>See How We Build</span>
+            <div className="flex items-center cursor-pointer text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
+               <HashLink to="/products#development_stages">   <span>See How We Build</span></HashLink>
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </div>
               </div>
@@ -99,10 +100,11 @@ function Shero() {
                   to refine your projects, improve feasibility, and plan
                   real-world implementation.
                 </p>
-                <div className="flex  cursor-pointer items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
+               <a href="https://www.linkedin.com/in/yuvaraj-maruthu-pandian-81796943/"> <div className="flex  cursor-pointer items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
                   <span>Connect with Mentor</span>
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </div>
+                </a>
               </div>
             </div>
 
@@ -120,10 +122,11 @@ function Shero() {
                   MERN, and cloud integration. Perfect for e-commerce, SaaS, and
                   internal enterprise tools.
                 </p>
-                <div className="flex cursor-pointer items-center text-black font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                <a href="contactus"><div className="flex cursor-pointer items-center text-black font-semibold group-hover:translate-x-2 transition-transform duration-300">
                   <span>Get in Touch</span>
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </div>
+                </a>
               </div>
             </div>
           </div>

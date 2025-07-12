@@ -34,12 +34,12 @@ const [ref2, isVisible2] = useScrollAnimation();
           </div>
         </div>
         <div ref={ref2} className={`image ${isVisible2 ? styles['internship-side-animation-show'] : styles['internship-side-animation']} flex  relative w-[95%] md:w-1/2`}>
-          <div className="absolute -z-10  lg:h-[70%] lg:w-[70%] xl:left-45 left-20 top-0">
+          <div className="absolute -z-10 md:block hidden lg:h-[70%] lg:w-[70%] xl:left-45 left-20 top-0">
             <img src={bgline} alt="" />
           </div>
           <img src={carrer} alt="" className="md:block hidden" />
 
-          <img src={carrer1} alt="" className="md:hidden block" />
+
         </div>
         <div className="bgline -z-20 sm:block absolute hidden lg:bottom-3 sm:-skew- sm:bottom-0 xl:bottom-10">
           <img src={underlinein} alt="" />

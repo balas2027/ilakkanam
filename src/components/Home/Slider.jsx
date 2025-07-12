@@ -70,7 +70,7 @@ const Card = ({ card }) => {
   return (
     <div
       key={card.id}
-      className="group relative rounded-3xl 2xl:h-150 2xl:w-250 h-100 w-75 lg:w-180 md:w-150 sm:w-130 xl:w-220 overflow-hidden  shadow-lg shadow-pink-200/50"
+      className="group relative rounded-3xl 2xl:h-140 2xl:w-250 h-100 w-75 lg:w-180 md:w-150 sm:w-130 xl:w-220 overflow-hidden  shadow-lg shadow-pink-200/50"
     >
       <div
         style={{

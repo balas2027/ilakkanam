@@ -12,6 +12,9 @@ import {
 } from "lucide-react";
 import useScrollAnimation from "../../scrollanimation";
 import styles from "../../css/Internship.module.css";
+import emailjs from "@emailjs/browser";
+
+import { useRef } from "react";
 
 const JobApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -20,8 +23,50 @@ const JobApplicationForm = () => {
     phone: "",
     role: "",
     message: "",
-    resume: null,
+    resumeLink: "", // Add this field
   });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const serviceID = "service_zgvvre4";
+    const templateID = "template_lmi62so";
+    const publicKey = "yw2UL0LiuYSX38szX";
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      role: formData.role,
+      message: formData.message || "No message provided",
+      resumeLink: formData.resumeLink,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, publicKey).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Application submitted successfully!");
+
+        document.getElementsByName("name")[0].value = "";
+        document.getElementsByName("email")[0].value = "";
+        document.getElementsByName("phone")[0].value = "";
+        document.getElementsByName("role")[0].value = "";
+        document.getElementsByName("message")[0].value = "";
+        document.getElementsByName("resumeLink")[0].value = ""; // Reset resume link
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          role: "",
+          message: "",
+          resumeLink: "", // Reset resume link
+        });
+      },
+      (err) => {
+        console.error("FAILED...", err);
+        alert("Something went wrong. Please try again.");
+      }
+    );
+  };
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -97,12 +142,6 @@ const JobApplicationForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Application submitted successfully!");
-  };
-
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   };
@@ -116,9 +155,9 @@ const JobApplicationForm = () => {
   const [ref, isVisible] = useScrollAnimation();
 
   const [ref1, isVisible1] = useScrollAnimation();
-  
+
   return (
-    <div className="min-h-screen bg-white">
+    <div id="careerform" className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="text-center mb-16">
@@ -138,7 +177,14 @@ const JobApplicationForm = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side - Application Form */}
           <div className="order-2 lg:order-1">
-            <div ref={ref} className={` ${isVisible ? styles['career-form-animation-show'] : styles['career-form-animation']} bg-white rounded-lg shadow-lg border border-gray-200 p-8`}>
+            <div
+              ref={ref}
+              className={` ${
+                isVisible
+                  ? styles["career-form-animation-show"]
+                  : styles["career-form-animation"]
+              } bg-white rounded-lg shadow-lg border border-gray-200 p-8`}
+            >
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Submit Your Application
@@ -158,7 +204,6 @@ const JobApplicationForm = () => {
                     <input
                       type="text"
                       name="name"
-                      value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                       placeholder="Enter your full name"
@@ -173,7 +218,6 @@ const JobApplicationForm = () => {
                     <input
                       type="tel"
                       name="phone"
-                      value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                       placeholder="Enter your phone number"
@@ -189,7 +233,6 @@ const JobApplicationForm = () => {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                     placeholder="Enter your email address"
@@ -203,7 +246,6 @@ const JobApplicationForm = () => {
                   </label>
                   <select
                     name="role"
-                    value={formData.role}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                     required
@@ -221,36 +263,24 @@ const JobApplicationForm = () => {
                 </div>
 
                 {/* Resume Upload */}
+                {/* Resume Drive Link */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Resume Upload *
+                    Resume Drive Link *
                   </label>
-                  <div className="relative">
-                    <input
-                      type="file"
-                      onChange={handleFileUpload}
-                      accept=".pdf,.doc,.docx"
-                      className="hidden"
-                      id="resume-upload"
-                      required
-                    />
-                    <label
-                      htmlFor="resume-upload"
-                      className="flex items-center justify-center w-full px-4 py-6 border-2 border-dashed border-gray-300 rounded-md cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-all duration-200"
-                    >
-                      <div className="text-center">
-                        <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                        <p className="text-sm text-gray-600 font-medium">
-                          {formData.resume
-                            ? formData.resume.name
-                            : "Click to upload your resume"}
-                        </p>
-                        <p className="text-xs text-gray-500 mt-1">
-                          PDF, DOC, or DOCX (Max 5MB)
-                        </p>
-                      </div>
-                    </label>
-                  </div>
+                  <input
+                    type="url"
+                    name="resumeLink"
+                    onChange={handleInputChange}
+                    value={formData.resumeLink}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                    placeholder="Paste your Google Drive link here"
+                    required
+                  />
+                  <p className="text-xs text-gray-500 mt-1">
+                    Make sure the file is publicly accessible or shared via
+                    link.
+                  </p>
                 </div>
 
                 {/* Message */}
@@ -260,7 +290,6 @@ const JobApplicationForm = () => {
                   </label>
                   <textarea
                     name="message"
-                    value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
@@ -283,7 +312,14 @@ const JobApplicationForm = () => {
           {/* Right Side - Company Information */}
           <div className="order-1 lg:order-2 space-y-8">
             {/* Why Work at Ilakkanam */}
-            <div ref={ref1} className={`${isVisible1 ? styles['side-animation-show'] : styles['side-animation']}  bg-gray-50 rounded-lg p-8 border border-gray-200`}>
+            <div
+              ref={ref1}
+              className={`${
+                isVisible1
+                  ? styles["side-animation-show"]
+                  : styles["side-animation"]
+              }  bg-gray-50 rounded-lg p-8 border border-gray-200`}
+            >
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Why Work at Ilakkanam?
               </h3>
@@ -307,7 +343,7 @@ const JobApplicationForm = () => {
             </div>
 
             {/* Team Testimonials */}
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-10">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 What Our Team Says
               </h3>

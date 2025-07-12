@@ -1,37 +1,27 @@
 import React from "react";
 import about from "../../assets/about.png";
 import { Link } from "react-router-dom";
-
+import styles from '../../css/home.module.css';
+import useScrollAnimation from "../../scrollanimation";
+import { useState ,useRef } from "react";
 function Habout() {
-  return (
-    // xl:sticky xl:top-0
-    <section className=" relative group my-5 w-full flex justify-center  py-5 xl:py-20">
-      <div className="absolute h-52 z-10 bottom-0 w-full rounded-t-full transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-100/1 via-blue-100/10 to-blue-200 pointer-events-none"></div>
-      <div className="absolute h-52 z-10 top-0 w-full rounded-b-full transition-transform duration-500 origin-center scale-x-0 group-hover:scale-x-100 bg-gradient-to-b from-blue-200 via-blue-100/10 to-blue-100/1 pointer-events-none"></div>
-      <div className="container px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-26">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center min-h-[calc(100vh-6rem)]">
-          {/* Image Section - Tilted Card Style */}
-          <div className="flex-1 flex items-center justify-center  lg:justify-start">
-            <div className="relative w-full flex justify-center lg:justify-start">
-              {/* Main tilted image card */}
-              <div className="relative  ">
-                <div className="p-3 sm:p-4 md:p-6 transition-shadow duration-500">
-                  <img
-                    src={about}
-                    alt="About Ilakkanam - Innovation in Engineering"
-                    className="h-70  sm:h-100  w-full xl:h-120 object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Content Section - Card Style */}
-          <div className="flex-1 w-full">
-            <div className="backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-10">
-              {/* Header */}
-              <div className="space-y-6">
+    const [ref1, isVisible1] = useScrollAnimation();
+  const [ref2, isVisible2] = useScrollAnimation();
+
+ 
+  return (
+    <>
+      <div className="md:py-30 group flex lg:flex-row gap-10 flex-col items-center py-10 xl:max-w-7xl xl:mx-auto sm:mx-10 mx-3">
+        <div ref={ref2} className={`${isVisible1 ? styles['side-animation-show'] : styles['side-animation-']} image lg:w-1/2 flex items-center justify-center lg:h-150 md:h-130 h-100`} >
+          <img
+            src={about}
+            alt="About Us"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div ref={ref1} className={` ${isVisible1 ? styles['side-animation-content-show'] : styles['side-animation-content']} lg:w-1/2 flex flex-col items-center justify-center"`}>
+                      <div className="space-y-6">
                 <div className="space-y-4">
                   <div className="inline-block transform -skew-x-12 group-hover:skew-x-0 transition-transform duration-500 border-blue-900 text-lg sm:text-xl font-extrabold bg-gradient-to-r from-blue-800 to-cyan-600 bg-clip-text text-transparent border-l-4 border-r-4 px-4 sm:px-5">
                     About Us
@@ -53,8 +43,8 @@ function Habout() {
                 </div>
 
                 {/* Vision & Goal Cards */}
-                <div className="xl:flex flex-col hidden sm:space-y-0 space-y-5 sm:flex-row gap-4 mt-8">
-                  <div className="flex-1 bg-gradient-to-br from-pink-50/30 to-red-50/30 p-4 rounded-lg border border-pink-100/50">
+                <div className="flex flex-col sm:space-y-0 space-y-5 sm:flex-row gap-4 mt-8">
+                  <div className="flex-1 bg-gradient-to-br from-pink-50/50 to-red-50/50 p-4 rounded-lg border border-pink-100/50">
                     <div className="flex items-center space-x-3 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-red-400 rounded-full flex items-center justify-center flex-shrink-0">
                         <svg
@@ -73,7 +63,7 @@ function Habout() {
                     </p>
                   </div>
 
-                  <div className="flex-1 bg-gradient-to-br from-blue-50/30 to-cyan-50/30 p-4 rounded-lg border border-blue-100/50">
+                  <div className="flex-1 bg-gradient-to-br from-blue-50/50 to-cyan-50/50 p-4 rounded-lg border border-blue-100/50">
                     <div className="flex items-center space-x-3 mb-2">
                       <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center flex-shrink-0">
                         <svg
@@ -118,12 +108,9 @@ function Habout() {
                     </svg>
                   </Link>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              </div></div>
       </div>
-    </section>
+    </>
   );
 }
 
