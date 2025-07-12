@@ -67,16 +67,7 @@ function ServicesCarousel() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Our Services
-          </h2>
-
-          <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Comprehensive solutions designed to elevate your business and drive
-            digital transformation
-          </p>
-        </div>
+        
 
       <div className="xl:max-w-7xl xl:mx-auto sm:mx-10 mx-3 ">
         <h1 className="text-4xl text-center md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
