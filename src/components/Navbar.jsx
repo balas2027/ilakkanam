@@ -11,6 +11,7 @@ import logo from "./logo.png";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import ilakkanam from "../../public/logo.png"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -112,8 +113,8 @@ function Example() {
                   <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
                     <div className="flex gap-x-3 items-center">
                       <img
-                        alt="Your Company"
-                        src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                        alt="Ilakkanam Company Logo"
+                        src={ilakkanam}
                         className="h-8 sm:block hidden w-auto"
                       />
                       <div className="lg:text-lg sm:hidden block lg:block  text-white sm:font-medium lg:font-bold">
