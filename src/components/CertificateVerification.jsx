@@ -72,7 +72,7 @@ function Certificate() {
   const interns = [
 {
   name: "Balaskanthan A K",
-  internId: "ILK2025INT002",
+  internId: "ILK2025INT010",
   college: "RMK College of Engineering and Technology, Tamil Nadu",
   duration: "1 month",
   startDate: "2025-07-05",
