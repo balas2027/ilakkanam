@@ -118,24 +118,24 @@ function ServicesCarousel() {
                   {service.description}
                 </p>
               </div>
-            ))}
-            <div className="flex z-10 flex-row sm:gap-5 gap-10 absolute bottom-5 w-full justify-center items-center">
-              <button
-                className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
-                onClick={() => onclick(currentSlide - 1)}
-              >
-                <ChevronUp />
-              </button>
-              <button
-                className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
-                onClick={() => onclick(currentSlide + 1)}
-              >
-                <ChevronDown />
-              </button>
+              <div className="flex z-10 flex-row sm:gap-5 gap-10 absolute bottom-5 w-full justify-center items-center">
+                <button
+                  className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
+                  onClick={() => onclick(currentSlide - 1)}
+                >
+                  <ChevronUp />
+                </button>
+                <button
+                  className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
+                  onClick={() => onclick(currentSlide + 1)}
+                >
+                  <ChevronDown />
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="image mx-5 hidden lg:w-1/2 lg:h-150 md:h-130 h-100 lg:flex items-center justify-center">
-            <img src={images} className="object-cover" alt="" />
+            <div className="image mx-5 hidden lg:w-1/2 lg:h-150 md:h-130 h-100 lg:flex items-center justify-center">
+              <img src={images} className="object-cover" alt="" />
+            </div>
           </div>
         </div>
       </div>
