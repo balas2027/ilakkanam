@@ -78,38 +78,29 @@ function ServicesCarousel() {
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 xl:gap-16 items-center">
-          {/* Vertical Carousel */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
-              {/* Carousel Container */}
-              <div className="h-96 overflow-hidden">
-                <div
-                  className="flex flex-col transition-transform duration-700 ease-in-out h-full"
-                  style={{ transform: `translateY(-${currentSlide * 100}%)` }}
-                >
-                  {services.map((service, index) => (
-                    <div
-                      key={service.id}
-                      className="min-h-full flex-shrink-0 p-2 sm:p-8"
-                    >
-                      <div className="h-full flex flex-col justify-center">
-                        <div className="flex items-center mb-6">
-                          <div className="w-12 sm:flex hidden h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full items-center justify-center text-white font-bold text-lg mr-4">
-                            {service.id}
-                          </div>
-                          <h3 className="text-2xl font-bold text-gray-900">
-                            {service.title}
-                          </h3>
-                        </div>
-
-                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                          {service.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+      <div className="xl:max-w-7xl xl:mx-auto sm:mx-10 mx-3 ">
+        <h1 className="text-4xl text-center md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          Our Services
+        </h1>
+        <p className="text-gray-600 text-center text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          Comprehensive solutions designed to elevate your business and drive
+          digital transformation
+        </p>
+        <div className="flex lg:flex-row mt-5 flex-col items-center justify-center">
+          <div className="content group relative lg:w-1/2 rounded-4xl shadow-2xl text-black md:h-130 h-120 flex sm:pt-0 pt-5 sm:items-center justify-center">
+            {services.map((service, index) => (
+              <div
+                key={service.id}
+                className={`service-item z-10 xl:space-y-15 space-y-10 p-5 ${
+                  service.id === currentSlide ? "block" : "hidden"
+                }`}
+              >
+                <div className="absolute inset-0 -z-10 h-full w-full top-0 left-0 ">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="image-cover brightness-50  rounded-4xl w-full h-full"
+                  />
                 </div>
                 <h2 className="xl:text-4xl text-3xl text-white text-shadow-md text-shadow-cyan-900 text-center font-bold">
                   {service.title}
@@ -118,27 +109,28 @@ function ServicesCarousel() {
                   {service.description}
                 </p>
               </div>
-              <div className="flex z-10 flex-row sm:gap-5 gap-10 absolute bottom-5 w-full justify-center items-center">
-                <button
-                  className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
-                  onClick={() => onclick(currentSlide - 1)}
-                >
-                  <ChevronUp />
-                </button>
-                <button
-                  className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
-                  onClick={() => onclick(currentSlide + 1)}
-                >
-                  <ChevronDown />
-                </button>
-              </div>
+            ))}
+            <div className="flex z-10 flex-row sm:gap-5 gap-10 absolute bottom-5 w-full justify-center items-center">
+              <button
+                className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
+                onClick={() => onclick(currentSlide - 1)}
+              >
+                <ChevronUp />
+              </button>
+              <button
+                className="cursor-pointer flex items-center justify-center  h-10 w-10 bg-gray-300 text-black rounded-full"
+                onClick={() => onclick(currentSlide + 1)}
+              >
+                <ChevronDown />
+              </button>
             </div>
-            <div className="image mx-5 hidden lg:w-1/2 lg:h-150 md:h-130 h-100 lg:flex items-center justify-center">
-              <img src={images} className="object-cover" alt="" />
-            </div>
+          </div>
+          <div className="image mx-5 hidden lg:w-1/2 lg:h-150 md:h-130 h-100 lg:flex items-center justify-center">
+            <img src={images} className="object-cover" alt="" />
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
