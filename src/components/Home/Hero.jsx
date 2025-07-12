@@ -3,7 +3,7 @@ import React from "react";
 // import { Boxes } from "../ui/backgroud-boxes";
 import { cn } from "../../lib/utils";
 import { Link } from "react-router-dom";
-import gridbg from "../../assets/gridbg.webp";
+import gridbg from "../../../public/gridbg.webp";
 import styles from "../../css/home.module.css";
 
 function IlakkanamHero() {
