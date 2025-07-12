@@ -71,16 +71,20 @@ import React, { useState } from "react";
 function Certificate() {
   const interns = [
     {
-      name: "Aarthi M",
-      internId: "ILK2025INT001",
-      college: "Anna University, Chennai",
-      role: "Frontend Developer",
-      duration: "2 months",
-      startDate: "2024-05-01",
-      endDate: "2024-06-30",
-      performance: "Excellent",
-      title:
-        "Contributed to the development of Ilakkanam’s official website by designing and implementing responsive UI components using React.js and Tailwind CSS. Ensured mobile-first design, improved performance scores by optimizing rendering logic, and collaborated with the design team for seamless user experience.",
+  name: "Balaskanthan A K",
+  internId: "ILK2025INT002",
+  college: "RMK College of Engineering and Technology, Tamil Nadu",
+  duration: "1 month",
+  startDate: "2025-07-05",
+  endDate: "2025-08-05",
+  performance: "Excellent",
+  title:
+    "Successfully completed a 1-month internship at Ilakkanam Private Limited from 05 July 2025 to 05 August 2025. During this period, he exhibited strong technical and creative skills while contributing significantly to the company's web development efforts. His key responsibilities and contributions included:\n\n" +
+    "- Designing and developing the official company website (www.ilakkanam.in) using React.js.\n" +
+    "- Writing clean, modular, and responsive code optimized for performance and scalability.\n" +
+    "- Implementing modern UI/UX best practices to ensure a smooth and intuitive user experience.\n" +
+    "- Deploying the website to a live server with a focus on cross-platform compatibility and performance.\n\n" +
+    "We acknowledge his excellent performance and wish him continued success in his future endeavors."
     },
   ];
  
